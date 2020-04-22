@@ -1,0 +1,41 @@
+.example-container {
+  height: 90%;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.mat-form-field {
+  width: 10%;
+}
+
+.side-nav {
+  .mat-nav-list {
+     margin-right: 10px;
+  }
+
+  .mat-list-item-content {
+    padding:0 23px;
+  }
+}
+
+
+
+.mat-drawer-inner-container {
+margin-right:20px;
+}
+
+.sidenav-container {
+  width: 90%;
+}
+
+
+
+.base-container {
+  width:90%;
+  text-align:right;
+}
+
+.is-active {
+  background-color: #FFE6CC !important;
+  border: 1px solid #D79B00 !important;
+}

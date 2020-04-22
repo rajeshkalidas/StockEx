@@ -1,0 +1,21 @@
+<mat-toolbar color="gray">
+  <mat-toolbar-row>
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" color="primary">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <div class="base-container">
+      <div></div>
+      <label>Base: </label>
+      <app-drop-down [dropDownList]="currencyList" [defaultValue]="baseCurrency" propertyValue="currency" (onSelectionChange)="onBaseCurrencyClickHandler($event)">
+      </app-drop-down>
+   </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #drawer class="side-nav" mode="side" opened>   
+    <app-toggle-button-group [routing]="true" [dataList]="buttonGroupList" [defaultValue]="selectedLink" propertyValue="value"></app-toggle-button-group>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav-container">
+    <router-outlet (activate)="changeOfRoutes()"></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

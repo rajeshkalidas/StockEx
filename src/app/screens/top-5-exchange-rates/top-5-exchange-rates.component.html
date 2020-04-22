@@ -1,0 +1,10 @@
+<div class="main-container top-5-exchange-rates-container">
+    <div class="spinner-container" *ngIf="isLoading">
+        <mat-spinner strokeWidth="3" [diameter]="50"></mat-spinner>
+    </div>
+    <div *ngIf="!isLoading && exchangeList.length > 0">
+      <app-toggle-button-group [routing]="false" (onToggleValueChange)="toggleChange($event)" [dataList]="buttonGroupList" [defaultValue]="toggleValue"></app-toggle-button-group>
+      <app-table-list [dataSource]="exchangeList" [columnsList]="displayedColumns" [pagination]="false"></app-table-list>
+    </div>
+    <app-error-message *ngIf="!isLoading && exchangeList.length === 0"></app-error-message>
+</div>
